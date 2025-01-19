@@ -1,9 +1,20 @@
-// Utility function to generate a random integer
+/*********************************************************************************
+*  WEB700 – Assignment 1
+*  I declare that this assignment is my own work in accordance with Seneca  Academic Policy.  
+*  No part of this assignment has been copied manually or electronically from any other source
+*  (including web sites) or distributed to other students.
+* 
+*  Name: Jagat Pareshbhai Patel
+*  Student ID: 118557248 Date: 17/01/2025
+*
+********************************************************************************/ 
+
+//console.log("Hello World!");
+
+
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
-
-// Variables storing predefined data
 const serverVerbs = ["GET", "GET", "GET", "POST", "GET", "POST"];
 const serverPaths = ["/", "/about", "/contact", "/login", "/panel", "/logout"];
 const serverResponses = [
@@ -15,7 +26,7 @@ const serverResponses = [
     "Logout Complete"
 ];
 
-// HTTP Request function
+
 function httpRequest(httpVerb, path) {
     for (let i = 0; i < serverPaths.length; i++) {
         if (serverVerbs[i] === httpVerb && serverPaths[i] === path) {
@@ -26,21 +37,21 @@ function httpRequest(httpVerb, path) {
 }
 
 
-// Automate Tests function
+
 function automateTests() {
     const testVerbs = ["GET", "POST"];
     const testPaths = ["/", "/about", "/contact", "/login", "/panel", "/logout", "/randomPath1", "/randomPath2"];
 
-    // Function to generate and test a random request
+    
     function randomRequest() {
         const randVerb = testVerbs[getRandomInt(testVerbs.length)];
         const randPath = testPaths[getRandomInt(testPaths.length)];
         console.log(httpRequest(randVerb, randPath));
     }
 
-    // Execute randomRequest every 1 second
+    
     setInterval(randomRequest, 1000);
 }
 
-// Invoke the automateTests function to start testing
+
 automateTests();
